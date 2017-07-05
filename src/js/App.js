@@ -43,12 +43,12 @@ class Counter extends Component {
     }
 
     render() {
-        return <p style={{color: this.props.color}}> `第${this.state.counter}出祁山`</p>
+        return <p style={{color: this.props.color}}> 第{this.state.counter}次出祁山</p>
     }
 }
 
 class List extends Component {
-    static state = {
+    state = {
         list: [
             {
                 name: '刘备',
@@ -70,25 +70,30 @@ class List extends Component {
     }
 
     render() {
-        const {list} = this.state
+        const {list} = this.state;
 
         return (
             <table>
                 <thead>
                 <tr>
                     <td>姓名</td>
-                    <td>职业</td>
+                    <td>官职</td>
                     <td>关系</td>
                 </tr>
                 </thead>
                 <tbody>
-                {list.map((item, index) => {
+                {
+                    list.map((item, index) =>
                     <tr key={index}>
                         <td>{item.name}</td>
-                        <td>{item.job ? item.job : "unknow"}</td>
-                        <td>{item.relationShip}</td>
+                        <td>{item.job?item.job:'unknow'}</td>
+                        <td>{
+                        item.relationShip.map((it,ind)=>
+                            <p key={ind}>{it}</p>)
+                    }</td>
                     </tr>
-                })}
+                    )
+                }
                 </tbody>
             </table>
         )
@@ -99,8 +104,8 @@ export default  class App extends Component {
     render() {
         return (
             <div>
-                <Header firstName="zhuge" lastName="liang" className="atn"/>
-                <Counter color="red"/>
+                <Header firstName="亮" lastName="诸葛" className="atn"/>
+                <Counter color="red" increment={1}/>
                 <List/>
             </div>
         )
