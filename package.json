@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startdevServer": "webpack-dev-server --hot --inline --colors --port 8888",
-    "start1": "node server1.js",
-    "start2": "node server2.js",
-    "testWebpack": "webpack --config webpack-dev-config.js"
+    "start": "webpack-dev-server --hot --inline --colors --port 8888",
+    "publish": "webpack --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -28,6 +26,7 @@
   },
   "homepage": "https://github.com/bhcbhc/July-Gambol#readme",
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -44,9 +43,15 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
+    "node-sass": "^4.5.3",
     "open-browser-webpack-plugin": "0.0.5",
+    "postcss": "^6.0.6",
+    "postcss-loader": "^2.0.6",
+    "postcss-scss": "^1.0.2",
+    "precss": "^2.0.0",
     "react-hot-loader": "^1.3.1",
     "redbox-react": "^1.4.2",
+    "rucksack-css": "^0.9.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",

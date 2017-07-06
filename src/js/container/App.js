@@ -2,23 +2,12 @@
  * Created by Ninghai on 2017/7/4.
  */
 import  React, {Component} from 'react'
-import '../styles/app.css'
-import icon from  '../images/small.png'
+import {
+    ComponTitle,
+    CssTest,
+    Tab
+} from '../component'
 
-class Header extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Hello, {this.props.lastName}{this.props.firstName}</h1>
-                <image src={icon}></image>
-            </div>
-        )
-    }
-}
 
 class Counter extends Component {
     constructor(props) {
@@ -44,6 +33,12 @@ class Counter extends Component {
 
     render() {
         return <p style={{color: this.props.color}}> 第{this.state.counter}次出祁山</p>
+    }
+}
+
+class Header extends Component{
+    render(){
+        return <h1>Hello,{this.props.lastName+this.props.firstName}</h1>
     }
 }
 
@@ -101,10 +96,20 @@ class List extends Component {
 }
 
 export default  class App extends Component {
+     state={
+        items:["关羽",'张飞','马超','黄忠','姜维']
+    };
+
     render() {
+         const {items}=this.state;
         return (
             <div>
+                <ComponTitle title="第一个标题"/>
                 <Header firstName="亮" lastName="诸葛" className="atn"/>
+                <ComponTitle title="第二个标题"/>
+                <CssTest/>
+                <ComponTitle title="第三个标题"/>
+                <Tab items={items}/>
                 <Counter color="red" increment={1}/>
                 <List/>
             </div>
