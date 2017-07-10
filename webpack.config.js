@@ -14,7 +14,7 @@ module.exports = {
     entry: {
         app: './src/index.js',
         bundle: [
-            'react', 'react-dom'
+            'react', 'redux'
         ]
     },
     output: {
@@ -28,7 +28,7 @@ module.exports = {
     module: {
         rules: [{
             test: /\.js[x]?$/,
-            exclude: /node_modules/,
+            include: path.join(__dirname, 'src'),
             use: [{
                 loader: 'react-hot-loader'
             }, {
@@ -38,11 +38,6 @@ module.exports = {
                     plugins: ['transform-runtime']
                 }
             }]
-        }, {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: [
-                'file-loader'
-            ]
         }, //共有样式
             {
                 test: /\.scss/,
@@ -55,10 +50,10 @@ module.exports = {
                             importLoaders: 1
                         }
                     }, {
-                        /*                        loader: 'postcss-loader', options: {
-                         plugins: (loader) => [require('precss')(), require('autoprefixer')(), require('rucksack-css')()]
-                         }*/
-                        loader: 'sass-loader'
+                        loader: 'postcss-loader', options: {
+                            plugins: [require('precss')(), require('autoprefixer')(), require('rucksack-css')()],
+                            parser: "postcss-scss"
+                        }
                     }]
                 })
             },//私有样式
@@ -75,10 +70,11 @@ module.exports = {
                             localIdentName: '[local]___[hash:base64:5]' //设置css-modules模式下的local类名的变量
                         }
                     }, {
-              /*          loader: 'postcss-loader', options: {
-                            plugins: (loader) => [require('precss'), require('autoprefixer'), require('rucksack-css')]
-                        }*/
-                         loader:'sass-loader'
+                        // loader: 'sass-loader'
+                        loader: 'postcss-loader', options: {
+                            plugins: [require('precss'), require('autoprefixer'), require('rucksack-css')],
+                            parser: 'postcss-scss'
+                        }
                     }]
                 })
             },
@@ -93,7 +89,8 @@ module.exports = {
                 test: /\.(gif|jpe?g|png|ico)$/,
                 use: [{
                     loader: 'url-loader', options: {
-                        limit: 8192
+                        limit: 8192,
+                        mimetype:"image/[name]-[hash:8].[ext]"
                     }
                 }]
             }
@@ -114,10 +111,10 @@ module.exports = {
             inject: 'body'
         }),
         new OpenBrowserPlugin({
-            url: 'http://localhost:8888'
+            url: 'http://localhost:8080'
         }),
         extractCommonCss,
-        extratPrivateCss
+        //  extratPrivateCss
     ],
     devServer: {
         contentBase: './',
