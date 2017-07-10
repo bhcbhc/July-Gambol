@@ -3,11 +3,7 @@
  */
 import React from "react"
 import {render} from 'react-dom'
-import App from './js/container/App'
-
-import './styles/normalize.scss'
-import './styles/app.scss'
-import  './styles/font.scss'
+import App from './js/index'
 
 render(
     <App/>,
