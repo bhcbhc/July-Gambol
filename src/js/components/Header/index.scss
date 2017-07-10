@@ -1,0 +1,5 @@
+@import "../../../styles/app.scss";
+@import "../../../styles/mixins";
+.header{
+  @mixin get-boundary 100%,$header-width;
+}
