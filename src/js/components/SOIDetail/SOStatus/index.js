@@ -5,17 +5,17 @@ import React, {Component} from 'react'
 import styles from './index.scss'
 
 export default class SOStatus extends Component {
-    constructor(props) {
-        super(props)
-    }
+	constructor(props) {
+		super(props)
+	}
 
-    render() {
-        const {stageName, status} = this.props
+	render() {
+		const {stageName, status} = this.props
 
-        return (
-            <div className={styles.soStatus + " " + styles[status]}>
-                {stageName}
-            </div>
-        )
-    }
+		return (
+			<div className={styles.soStatus + ' ' + styles[status]}>
+				{stageName}
+			</div>
+		)
+	}
 }

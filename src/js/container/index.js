@@ -9,33 +9,34 @@ import {Header} from '../components/index'
 import OrderList from './OrderList'
 import SOIDetail from './SOIDetail'
 
-const _soiDeatail = "ORDER_DETAIL"
+const _soiDeatail = 'ORDER_DETAIL'
 
 class AsyncApp extends Component {
-    constructor(props) {
-        super(props)
-    }
+	constructor(props) {
+		super(props)
+	}
 
-    componentWillMount() {
-        const {dispatch} = this.props
-        dispatch(fetchData)
-    }
+	componentWillMount() {
+		const {dispatch} = this.props
+		dispatch(fetchData)
+	}
 
-    render() {
-        const {pageSelect} = this.props
-        return (
-            <div>
-                <Header pageSelect={pageSelect}/>
-                {pageSelect === _soiDeatail
-                    ? <SOIDetail/>
-                    : <OrderList/>
-                }
-            </div>
-        )
-    }
+	render() {
+		const {pageSelect} = this.props
+		return (
+			<div>
+				<Header pageSelect={pageSelect}/>
+				{pageSelect === _soiDeatail
+					? <SOIDetail/>
+					: <OrderList/>
+				}
+			</div>
+		)
+	}
 }
 
 function mapStateToProps(state) {
-    return state
+	return state
 }
-export  default  connect(mapStateToProps)(AsyncApp)
+
+export default connect(mapStateToProps)(AsyncApp)
