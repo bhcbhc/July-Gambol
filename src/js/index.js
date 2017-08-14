@@ -6,9 +6,7 @@ import {Provider} from 'react-redux'
 import configureStore from './redux/createStore'
 import  AsyncApp from './container/index'
 
-import '../styles/normalize.scss'
 import '../styles/app.scss'
-import  '../styles/font.scss'
 
 const store = configureStore();
 

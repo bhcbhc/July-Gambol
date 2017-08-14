@@ -78,19 +78,18 @@ module.exports = {
                     }]
                 })
             },
-            {
-                test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
-                use: [{
-                    loader: 'url-loader', options: {
-                        limit: 8192
-                    }
-                }]
-            }, {
+            /*{
+             test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
+             use: [{
+             loader: 'url-loader', options: {
+             limit: 8192
+             }
+             }]
+             },*/ {
                 test: /\.(gif|jpe?g|png|ico)$/,
                 use: [{
                     loader: 'url-loader', options: {
-                        limit: 8192,
-                        mimetype:"image/[name]-[hash:8].[ext]"
+                        limit: 8192
                     }
                 }]
             }
@@ -100,7 +99,7 @@ module.exports = {
         // new webpack.optimize.UglifyJsPlugin({minimize: true}),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'template.html'),
-            title: "三国杀V1.0",
+            title: "GambolScreen",
             favicon: path.join(__dirname, 'src/favicon.ico'),
             minify: {
                 removeComments: true,

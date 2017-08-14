@@ -8,7 +8,6 @@
     "test_my": "babel-node myServer.js",
     "eslint-rule": "eslint --init",
     "start": "webpack-dev-server --hot --inline --colors --port 8080",
-    "start-minooo": "babel-node server.js",
     "publish": "webpack --config webpack-pro-config.js --progress --colors"
   },
   "repository": {

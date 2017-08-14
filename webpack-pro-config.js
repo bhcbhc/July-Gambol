@@ -6,20 +6,20 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractCommonCss = new ExtractTextPlugin('[name]_common.css');
-const extratPrivateCss = new ExtractTextPlugin('[name]_private.css');
+const extractCommonCss = new ExtractTextPlugin('css/[name]_common.css');
+const extratPrivateCss = new ExtractTextPlugin('css/[name]_private.css');
 
 module.exports = {
     entry: {
         app: './src/index.js',
         bundle: [
-            'react', 'react-dom'
+            'react', 'redux'
         ]
     },
     output: {
-        filename: '[name].min.js',
+        filename: 'js/[name].min.js',
         path: path.join(__dirname, 'dist'),
-        chunkFilename: '[name].min.js'
+        chunkFilename: 'js/[name].min.js'
     },
     resolve: {
         extensions: ['.js', '.json', '.jsx', '.scss', '.css']
@@ -77,14 +77,14 @@ module.exports = {
                     }]
                 })
             },
-            {
+/*            {
                 test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
                 use: [{
                     loader: 'url-loader', options: {
                         limit: 8192
                     }
                 }]
-            }, {
+            },*/ {
                 test: /\.(gif|jpe?g|png|ico)$/,
                 use: [{
                     loader: 'url-loader', options: {
@@ -107,7 +107,7 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'template.html'),
-            title: "三国杀V1.0",
+            title: "GambolScreen",
             filename:'index.html',
             favicon: path.join(__dirname, 'src/favicon.ico'),
             minify: {

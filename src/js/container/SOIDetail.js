@@ -8,8 +8,8 @@ export default class SOIDetail extends Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className="order-detail">
+                <div className="order-info">
                     <OrderInfo/>
                     <PetImage/>
                 </div>

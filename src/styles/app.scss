@@ -1,2 +1,150 @@
-//
-$header-width:50px;
+@import "./mixins.scss";
+
+$header-height: 50px;
+$header-bgcolor: #0f688d;
+$header-color: #fff;
+
+$footer-height: 30px;
+
+$base-bgcolor: #eee;
+$base-color: #fff;
+$border-color: #fff;
+
+$table-header-bgcolor: #65b6df;
+$table-header-color: #fff;
+
+$finished-color: #92D050;
+$executing-bgcolor: #FFFF99;
+$unfinished-bgcolor: #D8D8D8;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  font-size: 14px;
+  font-family: 'Segoe WP', 'Segoe UI Symbol', 'Segoe UI', sans-serif;
+  @mixin get-boundary
+100%, 100%;
+user-select:none;
+}
+
+body {
+  background: $base-bgcolor;
+  overflow: hidden;
+}
+
+[data-reactroot] {
+  height: 100%;
+  padding-top: $header-height;
+  max-width: 1366px;
+  margin: 0 auto;
+  @mixin get-boundary
+;
+}
+
+.square-15 {
+  @mixin get-boundary
+  15px, 15px;
+}
+
+.square-30 {
+  @mixin get-boundary
+  30px, 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+.order-detail {
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 230px;
+
+  ul {
+    height: 30px;
+    line-height: 30px;
+  }
+
+  li {
+    float: left;
+    margin-left: 20px;
+    font-size: 0;
+
+    * {
+      vertical-align: middle;
+    }
+
+    div {
+      display: inline-block;
+    }
+
+    span {
+      font-size: 14px;
+      margin-left: 20px;
+    }
+  }
+}
+
+.order-list {
+  @mixin get-boundary
+100%, 100%;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+  td {
+    font-size: 20px;
+  }
+
+  tbody td {
+    border: 1px solid black;
+  }
+
+  thead td {
+    font-weight: bold;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+}
+
+.order-info {
+  height: 100%;
+  position: relative;
+}
+
+thead {
+  > tr {
+    background: $table-header-bgcolor;
+    > td {
+      color: $table-header-color;
+    }
+  }
+}
+
+td {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 35px;
+  line-height: 35px;
+  font-size: 0;
+
+  span {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
