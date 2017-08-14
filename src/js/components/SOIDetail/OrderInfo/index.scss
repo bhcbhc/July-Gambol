@@ -1,0 +1,23 @@
+.orderInfo{
+  font-weight:bold;
+  font-size: 17px;
+
+  img{
+    margin-right: 5px;
+    vertical-align: text-top;
+  }
+}
+
+.orderInfoContainer{
+  width:68%;
+  padding: 5px;
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+
+    td{
+      border: solid 1px #000;
+    }
+  }
+}

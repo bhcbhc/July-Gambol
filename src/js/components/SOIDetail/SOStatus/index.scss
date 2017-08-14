@@ -1,14 +1,13 @@
 @import "../../../../styles/app.scss";
 
-.orderSchedule{
-  border: 1px solid black;
-  padding: 10px 0 0 10px;
-  border-radius: 10px;
-  height: 230px;
-  box-sizing:border-box;
-   table{
-     width: 100%;
-   }
+.soStatus{
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  color: black;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0 20px;
 }
 
 .unfinished {

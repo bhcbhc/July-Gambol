@@ -1,7 +1,22 @@
 .InfoContainer{
-
+  width: 330px;
+  height: 230px;
+  padding: 20px;
+  border: 1px solid black;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .petInfo{
+  position: absolute;
+  right: 5px;
+  top: 20px;
 
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
 }
